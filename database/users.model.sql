@@ -6,5 +6,5 @@ CREATE TABLE IF NOT EXISTS public.users (
     last_name VARCHAR(225) NOT NULL,
     password VARCHAR(225) NOT NULL,
     username VARCHAR(225) NOT NULL UNIQUE,
-    is_admin BOOLEAN DEFAULT FALSE
+    role VARCHAR(50) NOT NULL DEFAULT 'user',
 );
