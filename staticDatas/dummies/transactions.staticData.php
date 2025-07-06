@@ -2,9 +2,9 @@
 
 return [
     [
-        'transaction_id' => '2025000',
+        'transaction_id' => 'f0f0f0f0-f0f0-f0f0-f0f0-f0f0f0f0f0f0',
         'user_id'         => '11111111-1111-1111-1111-111111111111', // Juan Dela Cruz
-        'order_id'        => 'aaaa-1234', // replace with actual order UUID for Juan
+        'order_id'        => 'abababab-abab-abab-abab-abababababab', // replace with actual order UUID for Juan
         'transaction_date'=> '2025-07-06 10:10:00',
         'currency'        => 'Zombie Crystal',
         'amount_paid'     => 100.00,
@@ -12,9 +12,9 @@ return [
         'status'          => 'completed',
     ],
     [
-        'transaction_id' => '2025001',
+        'transaction_id' => 'beefbeef-beef-beef-beef-beefbeefbeef',
         'user_id'         => '11111111-1111-1111-1111-111111111111', // Juan Dela Cruz
-        'order_id'        => 'aaaa-5678', // replace with another order UUID for Juan
+        'order_id'        => 'cdcdcdcd-cdcd-cdcd-cdcd-cdcdcdcdcdcd', // replace with another order UUID for Juan
         'transaction_date'=> '2025-07-05 14:40:00',
         'currency'        => 'Zombie Crystal',
         'amount_paid'     => 50.00,
@@ -22,9 +22,9 @@ return [
         'status'          => 'completed',
     ],
     [
-        'transaction_id' => '2025002',
+        'transaction_id' => '12341234-1234-1234-1234-123412341234',
         'user_id'         => '22222222-2222-2222-2222-222222222222', // Admin User
-        'order_id'        => 'bbbb-1234', // replace with actual order UUID for Admin
+        'order_id'        => 'xyxyxyxy-xyxy-xyxy-xyxy-xyxyxyxyxyxy', // replace with actual order UUID for Admin
         'transaction_date'=> '2025-07-04 09:10:00',
         'currency'        => 'Zombie Crystal',
         'amount_paid'     => 150.00,
