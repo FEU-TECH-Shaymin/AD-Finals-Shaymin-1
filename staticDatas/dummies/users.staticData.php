@@ -8,7 +8,7 @@ return [
         'last_name'   => 'Dela Cruz',
         'username'    => 'juandelacruz',
         'password'    => 'zombieSafe99', // will be hashed by the seeder
-        'is_admin'    => false,
+        'role'    => 'user',
     ],
     [
         'user_id'     => '22222222-2222-2222-2222-222222222222',
@@ -17,6 +17,6 @@ return [
         'last_name'   => 'User',
         'username'    => 'admin',
         'password'    => 'admin123',
-        'is_admin'    => true,
+        'role'    => 'admin',
     ],
 ];
