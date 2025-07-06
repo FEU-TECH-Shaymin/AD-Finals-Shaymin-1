@@ -1,0 +1,33 @@
+<?php
+
+declare(strict_types=1);
+
+// 1) Autoload
+require 'vendor/autoload.php';
+
+// 2) Bootstrap
+require 'bootstrap.php';
+
+// 3) Load environment
+$typeConfig = require_once UTILS_PATH . 'envSetter.util.php';
+
+// 4) Connect to PostgreSQL
+$pgConfig = [
+    'host' => $typeConfig['pg_host'],
+    'port' => $typeConfig['pg_port'],
+    'db'   => $typeConfig['pg_db'],
+    'user' => $typeConfig['pg_user'],
+    'pass' => $typeConfig['pg_pass'],
+];
+
+try {
+    $dsn = "pgsql:host={$pgConfig['host']};port={$pgConfig['port']};dbname={$pgConfig['db']}";
+    $pdo = new PDO($dsn, $pgConfig['user'], $pgConfig['pass'], [
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+    ]);
+    echo "✅ Connected to PostgreSQL successfully.\n";
+} catch (PDOException $e) {
+    echo "❌ Connection to PostgreSQL failed: " . $e->getMessage() . "\n";
+    exit(1);
+}
+
