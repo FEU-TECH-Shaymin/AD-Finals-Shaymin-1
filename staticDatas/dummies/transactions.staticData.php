@@ -24,7 +24,7 @@ return [
     [
         'transaction_id' => '12341234-1234-1234-1234-123412341234',
         'user_id'         => '22222222-2222-2222-2222-222222222222', // Admin User
-        'order_id'        => 'xyxyxyxy-xyxy-xyxy-xyxy-xyxyxyxyxyxy', // replace with actual order UUID for Admin
+        'order_id'        => 'a1a1a1a1-a1a1-a1a1-a1a1-a1a1a1a1a1a1', // replace with actual order UUID for Admin
         'transaction_date'=> '2025-07-04 09:10:00',
         'currency'        => 'Zombie Crystal',
         'amount_paid'     => 150.00,
