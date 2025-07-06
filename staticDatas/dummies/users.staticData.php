@@ -2,7 +2,7 @@
 
 return [
     [
-        'user_id'     => '11111',
+        'user_id'     => '11111111-1111-1111-1111-111111111111',
         'first_name'  => 'Juan',
         'middle_name' => 'R.',
         'last_name'   => 'Dela Cruz',
@@ -11,7 +11,7 @@ return [
         'is_admin'    => false,
     ],
     [
-        'user_id'     => '22222',
+        'user_id'     => '22222222-2222-2222-2222-222222222222',
         'first_name'  => 'Admin',
         'middle_name' => '',
         'last_name'   => 'User',

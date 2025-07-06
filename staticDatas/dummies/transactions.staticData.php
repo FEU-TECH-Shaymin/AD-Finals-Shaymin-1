@@ -3,7 +3,7 @@
 return [
     [
         'transaction_id' => '2025000',
-        'user_id'         => '11111', // Juan Dela Cruz
+        'user_id'         => '11111111-1111-1111-1111-111111111111', // Juan Dela Cruz
         'order_id'        => 'aaaa-1234', // replace with actual order UUID for Juan
         'transaction_date'=> '2025-07-06 10:10:00',
         'currency'        => 'Zombie Crystal',
@@ -13,7 +13,7 @@ return [
     ],
     [
         'transaction_id' => '2025001',
-        'user_id'         => '11111', // Juan Dela Cruz
+        'user_id'         => '11111111-1111-1111-1111-111111111111', // Juan Dela Cruz
         'order_id'        => 'aaaa-5678', // replace with another order UUID for Juan
         'transaction_date'=> '2025-07-05 14:40:00',
         'currency'        => 'Zombie Crystal',
@@ -23,7 +23,7 @@ return [
     ],
     [
         'transaction_id' => '2025002',
-        'user_id'         => '22222', // Admin User
+        'user_id'         => '22222222-2222-2222-2222-222222222222', // Admin User
         'order_id'        => 'bbbb-1234', // replace with actual order UUID for Admin
         'transaction_date'=> '2025-07-04 09:10:00',
         'currency'        => 'Zombie Crystal',
