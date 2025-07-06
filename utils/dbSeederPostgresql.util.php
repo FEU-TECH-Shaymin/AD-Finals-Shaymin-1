@@ -48,17 +48,18 @@ foreach ($seedMap as $table => $file) {
     switch ($table) {
         case 'users':
             $stmt = $pdo->prepare("
-                INSERT INTO users (first_name, middle_name, last_name, password, username, is_admin)
-                VALUES (:first_name, :middle_name, :last_name, :password, :username, :is_admin)
+                INSERT INTO users (user_id, first_name, middle_name, last_name, password, username, role)
+                VALUES (:user_id, :first_name, :middle_name, :last_name, :password, :username, :role)
             ");
             foreach ($data as $u) {
                 $stmt->execute([
+                    ':user_id' => $u['user_id'],
                     ':first_name' => $u['first_name'],
                     ':middle_name' => $u['middle_name'],
                     ':last_name' => $u['last_name'],
                     ':password' => password_hash($u['password'], PASSWORD_DEFAULT),
                     ':username' => $u['username'],
-                    ':is_admin' => filter_var($u['is_admin'], FILTER_VALIDATE_BOOLEAN),
+                    ':role' => $u['role'],
                 ]);
             }
             break;
@@ -79,38 +80,38 @@ foreach ($seedMap as $table => $file) {
             }
             break;
 
-        case 'orders':
-            $stmt = $pdo->prepare("
-                INSERT INTO orders (user_id, order_date, total_amount, status)
-                VALUES (:user_id, :order_date, :total_amount, :status)
-            ");
-            foreach ($data as $o) {
-                $stmt->execute([
-                    ':user_id' => $o['user_id'],
-                    ':order_date' => $o['order_date'],
-                    ':total_amount' => $o['total_amount'],
-                    ':status' => $o['status'],
-                ]);
-            }
-            break;
+        // case 'orders':
+        //     $stmt = $pdo->prepare("
+        //         INSERT INTO orders (user_id, order_date, total_amount, status)
+        //         VALUES (:user_id, :order_date, :total_amount, :status)
+        //     ");
+        //     foreach ($data as $o) {
+        //         $stmt->execute([
+        //             ':user_id' => $o['user_id'],
+        //             ':order_date' => $o['order_date'],
+        //             ':total_amount' => $o['total_amount'],
+        //             ':status' => $o['status'],
+        //         ]);
+        //     }
+        //     break;
 
-        case 'transactions':
-            $stmt = $pdo->prepare("
-                INSERT INTO transactions (user_id, order_id, transaction_date, currency, amount_paid, total_amount, status)
-                VALUES (:user_id, :order_id, :transaction_date, :currency, :amount_paid, :total_amount, :status)
-            ");
-            foreach ($data as $t) {
-                $stmt->execute([
-                    ':user_id' => $t['user_id'],
-                    ':order_id' => $t['order_id'],
-                    ':transaction_date' => $t['transaction_date'],
-                    ':currency' => $t['currency'],
-                    ':amount_paid' => $t['amount_paid'],
-                    ':total_amount' => $t['total_amount'],
-                    ':status' => $t['status'],
-                ]);
-            }
-            break;
+        // case 'transactions':
+        //     $stmt = $pdo->prepare("
+        //         INSERT INTO transactions (user_id, order_id, transaction_date, currency, amount_paid, total_amount, status)
+        //         VALUES (:user_id, :order_id, :transaction_date, :currency, :amount_paid, :total_amount, :status)
+        //     ");
+        //     foreach ($data as $t) {
+        //         $stmt->execute([
+        //             ':user_id' => $t['user_id'],
+        //             ':order_id' => $t['order_id'],
+        //             ':transaction_date' => $t['transaction_date'],
+        //             ':currency' => $t['currency'],
+        //             ':amount_paid' => $t['amount_paid'],
+        //             ':total_amount' => $t['total_amount'],
+        //             ':status' => $t['status'],
+        //         ]);
+        //     }
+        //     break;
 
         default:
             echo "⚠️ Skipping unknown table: {$table}\n";
