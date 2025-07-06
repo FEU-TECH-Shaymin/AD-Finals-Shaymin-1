@@ -44,5 +44,27 @@ foreach ([
     echo "🗑️  Dropped table: {$table}\n";
 }
 
+// 6) Apply updated schema
+$models = [
+    'database/users.model.sql',
+    'database/products.model.sql',
+    'database/orders.model.sql',
+    'database/transactions.model.sql',
+    // add more models as needed
+];
 
+foreach ($models as $modelPath) {
+    echo "Applying schema from {$modelPath}…\n";
+
+    $sql = file_get_contents($modelPath);
+
+    if ($sql === false) {
+        throw new RuntimeException("❌ Could not read {$modelPath}");
+    }
+
+    $pdo->exec($sql);
+    echo "✅ Successfully applied: {$modelPath}\n";
+}
+
+echo "🎉 Migration complete!\n";
 
