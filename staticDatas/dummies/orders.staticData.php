@@ -16,7 +16,7 @@ return [
         'status'       => 'shipped',
     ],
     [
-        'order_id' => 'xyxyxyxy-xyxy-xyxy-xyxy-xyxyxyxyxyxy',
+        'order_id' => 'a1a1a1a1-a1a1-a1a1-a1a1-a1a1a1a1a1a1',
         'user_id'      => '22222222-2222-2222-2222-222222222222', // Admin User
         'order_date'   => '2025-07-04 09:00:00',
         'total_amount' => 149.95,
